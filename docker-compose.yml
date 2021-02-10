@@ -1,0 +1,54 @@
+version: '3.3'
+
+services:
+  php-fpm:
+    build:
+      context: .
+      dockerfile: docker/php-fpm/Dockerfile
+    environment:
+      - DB_HOST=db
+      - DB_USER=root
+      - DB_NAME=wp
+      - DB_PASSWORD=password
+    volumes:
+    - ./code:/var/www/html
+    links:
+      - db
+    depends_on:
+      - db
+    restart: always
+
+  db:
+    image: mariadb
+    volumes:
+      - ./db:/var/lib/mysql
+    environment:
+      - MYSQL_DATABASE=wp
+      - MYSQL_ROOT_PASSWORD=password
+    ports:
+      - "3306:3306"
+    restart: always
+
+  nginx:
+    build:
+      context: .
+      dockerfile: docker/nginx/Dockerfile
+    ports:
+      - '80:80'
+    volumes:
+      - ./docker/nginx:/etc/nginx/conf.d
+      - ./logs/nginx:/var/log/nginx
+      - ./code:/var/www/html
+    links:
+      - php-fpm
+      - db
+    restart: always
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    links:
+      - db
+    ports:
+      - 8765:80
+    depends_on:
+      - db
