@@ -1,7 +1,88 @@
+@use "sass:map";
+
 .banner .nav li {
   @extend .nav-item;
 }
 
 .banner .nav a {
   @extend .nav-link;
+}
+
+.top-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 24px 0;
+
+  &__sitename {
+    font-size: 56px;
+    color:map-get($theme-colors, primary);
+  }
+  
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+  }
+
+  &__contact {
+    font-size: 14px;
+  }
+
+  &__social-networks {
+    display: flex;
+    align-items: center;
+  }
+
+  &__social-network {
+    margin: 0 8px;
+  }
+
+  &__social-youtube::before {
+    content:"";
+    display: inline-block;
+    background-size: 32px 32px;
+    background-image: url(map-get($social-networks,youtube));
+    width: 32px;
+    height: 32px;
+  }
+
+  &__social-vk::before {
+    content:"";
+    display: inline-block;
+    background-size: 32px 32px;
+    background: url(map-get($social-networks,vk));
+    width: 32px;
+    height: 32px;
+  }
+  
+  &__social-instagram::before {
+    content:"";
+    display: inline-block;
+    background-size: 32px 32px;
+    background: url(map-get($social-networks,instagram));
+    width: 32px;
+    height: 32px;
+  }
+}
+
+.bottom-header__section {
+  background-color: map-get($background-colors, primary);
+  box-shadow: 0px 0px 3px 1px map-get($background-colors, primary);
+  padding: 8px 0;
+}
+
+.nav-primary {
+  &__menu {
+    display: flex;
+
+    & li:first-child {
+      padding:8px 16px 8px 0;
+    }
+
+    &  li {
+      font-size: 21px;
+      padding: 8px 16px;
+    }
+
+  }
 }

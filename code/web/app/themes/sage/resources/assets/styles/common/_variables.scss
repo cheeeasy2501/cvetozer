@@ -1,10 +1,21 @@
 /** Import Bootstrap functions */
 @import "~bootstrap/scss/functions";
 
-$theme-colors: (
-  primary: #e08888
+$background-colors: (
+  primary:#ededed,
+  secondary:#ffffff,
 );
 
+$theme-colors: (
+  primary: #030008,
+  secondary: rgba(52, 235, 15, 0.534),
+);
+
+$social-networks:(
+  youtube:'https://pbs.twimg.com/media/D9bJpfcXoAEy1bs.png',
+  vk:'http://aktivklimat.ru/thumb/2/942lOIHKsx1UkZY5z8Nnjg/32r32/d/vk_0.png',
+  instagram:'https://bereza.markit.by/images/icons/social/inst.png',
+);
 /** Bootstrap navbar fix (https://git.io/fADqW) */
 $navbar-dark-toggler-icon-bg: none;
 $navbar-light-toggler-icon-bg: none;
