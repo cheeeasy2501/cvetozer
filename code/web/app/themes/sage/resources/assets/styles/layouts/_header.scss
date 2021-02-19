@@ -1,13 +1,5 @@
 @use "sass:map";
 
-.banner .nav li {
-  @extend .nav-item;
-}
-
-.banner .nav a {
-  @extend .nav-link;
-}
-
 .top-header {
   display: flex;
   justify-content: space-between;
@@ -15,9 +7,9 @@
 
   &__sitename {
     font-size: 56px;
-    color:map-get($theme-colors, primary);
+    color: map-get($theme-colors, primary);
   }
-  
+
   &__contacts {
     display: flex;
     flex-direction: column;
@@ -38,7 +30,7 @@
   }
 
   &__social-youtube::before {
-    content:"";
+    content: "";
     display: inline-block;
     background-size: 32px 32px;
     background-image: url(map-get($social-networks,youtube));
@@ -47,42 +39,51 @@
   }
 
   &__social-vk::before {
-    content:"";
+    content: "";
     display: inline-block;
-    background-size: 32px 32px;
     background: url(map-get($social-networks,vk));
+    background-size: 32px 32px;
     width: 32px;
     height: 32px;
   }
-  
+
   &__social-instagram::before {
-    content:"";
+    content: "";
     display: inline-block;
-    background-size: 32px 32px;
     background: url(map-get($social-networks,instagram));
+    background-size: 32px 32px;
     width: 32px;
     height: 32px;
   }
 }
 
 .bottom-header__section {
-  background-color: map-get($background-colors, primary);
-  box-shadow: 0px 0px 3px 1px map-get($background-colors, primary);
   padding: 8px 0;
 }
 
 .nav-primary {
   &__menu {
     display: flex;
+    background-color: map-get($background-colors, primary);
+    padding: 8px;
+    border-radius: 4px;
 
-    & li:first-child {
-      padding:8px 16px 8px 0;
+    .sub-menu {
+      display: none;
+      transition: 0.3s ease-in;
     }
 
-    &  li {
+    li {
       font-size: 21px;
       padding: 8px 16px;
     }
 
+    & li:first-child {
+      padding: 8px 16px 8px 0;
+    }
+
+    & li:hover > ul {
+      display: block;
+    }
   }
 }

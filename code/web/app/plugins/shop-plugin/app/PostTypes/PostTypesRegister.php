@@ -2,7 +2,7 @@
 
 namespace Shop\PostTypes;
 
-use Shop\PostTypes\Catalog;
+use Shop\PostTypes\Product;
 
 /**
  * Class PostTypesRegister
@@ -14,7 +14,7 @@ class PostTypesRegister
      * PostTypesRegister constructor
      */
     public function __construct() {
-        Catalog::register();
+        Product::register();
     }
 }
 

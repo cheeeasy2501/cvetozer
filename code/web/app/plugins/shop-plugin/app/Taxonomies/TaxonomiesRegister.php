@@ -2,7 +2,7 @@
 
 namespace Shop\Taxonomies;
 
-use Shop\Taxonomies\ProductCategory;
+use Shop\Taxonomies\Catalog;
 
 /**
  * Class TaxonomiesRegister
@@ -14,7 +14,7 @@ class TaxonomiesRegister
      * TaxonomiesRegister constructor
      */
     public function __construct() {
-        ProductCategory::register();
+        Catalog::register();
     }
 }
 
