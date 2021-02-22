@@ -12,6 +12,9 @@ RUN apt-get update && \
     apt-get install -y git && \
     apt-get install -y unzip
 
+RUN pecl install xdebug
+RUN docker-php-ext-enable xdebug
+
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 COPY ./docker/php-fpm/php.ini /usr/local/etc/php/php.ini
