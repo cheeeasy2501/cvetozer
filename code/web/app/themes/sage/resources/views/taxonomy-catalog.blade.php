@@ -9,8 +9,10 @@
     {!! get_search_form(false) !!}
   @endif
 
+  {!! $current_catalog_categories !!}
+
   @while (have_posts()) @php the_post() @endphp
   @endwhile
 
-  {!! $current_catalog_items !!}
+
 @endsection
