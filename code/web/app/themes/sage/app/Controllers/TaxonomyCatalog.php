@@ -15,7 +15,6 @@ class TaxonomyCatalog extends Controller
             'hide_empty' => false,
             'parent' => $category->term_id
         ]);
-//        $categories = get_term_children($category->term_id, Catalog::TAXONOMY_TYPE);
 
         return Category::categoryRender($categories);
     }

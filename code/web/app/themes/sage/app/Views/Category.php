@@ -23,6 +23,7 @@ class Category
             $description = $catalog->description;
 
             $html .= "<li class='catalog-category'>
+                        <div class='catalog-category__shadow'></div>
                         <a class='catalog-category__link' href='{$link}'>
                             <div class='catalog-category__link__title'>{$title}</div>
                             <div class='catalog-category__link__description'>{$description}</div>
