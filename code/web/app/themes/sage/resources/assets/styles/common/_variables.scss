@@ -19,3 +19,7 @@ $social-networks:(
 /** Bootstrap navbar fix (https://git.io/fADqW) */
 $navbar-dark-toggler-icon-bg: none;
 $navbar-light-toggler-icon-bg: none;
+
+.entry-title::before {
+  font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f007";
+}
