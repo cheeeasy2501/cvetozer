@@ -10,12 +10,19 @@ abstract class AMetaBox
     }
 
     /**
-     * Add metabox.
+     * Add metabox
      *
      * @param $postType
      * @return mixed
      */
     abstract public function addMetaBox($postType);
+
+    /**
+     * Render metabox html template on backend
+     *
+     * @return mixed
+     */
+    abstract public function render();
 
     /**
      * Abstract save method
