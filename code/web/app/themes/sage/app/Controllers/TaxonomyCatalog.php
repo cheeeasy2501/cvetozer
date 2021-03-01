@@ -8,7 +8,7 @@ use Sober\Controller\Controller;
 
 class TaxonomyCatalog extends Controller
 {
-    function currentCatalogCategories(): string {
+    public function currentCatalogCategories(): string {
         $category = get_queried_object();
         $categories = get_terms([
             'taxonomy'   => Catalog::TAXONOMY_TYPE,
