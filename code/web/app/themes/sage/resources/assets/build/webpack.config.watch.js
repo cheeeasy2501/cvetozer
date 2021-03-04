@@ -1,7 +1,7 @@
 const url = require('url');
 const webpack = require('webpack');
 const BrowserSyncPlugin = require('browsersync-webpack-plugin');
-
+// const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const config = require('./config');
 
 const target = process.env.DEVURL || config.devUrl;
@@ -18,7 +18,7 @@ if (url.parse(target).protocol === 'https:') {
 module.exports = {
   output: {
     pathinfo: true,
-    publicPath: config.proxyUrl + config.publicPath,
+    publicPath: config.publicPath,
   },
   devtool: '#cheap-module-source-map',
   stats: false,
@@ -33,5 +33,21 @@ module.exports = {
       watch: config.watch,
       delay: 500,
     }),
+    // new BrowserSyncPlugin(
+    //   // BrowserSync options
+    //   {
+    //     open: config.open,
+    //     proxy: {
+    //       target: config.devUrl,
+    //     },
+    //     watch: config.watch,
+    //   },
+    //   // plugin options
+    //   {
+    //     // prevent BrowserSync from reloading the page
+    //     // and let Webpack Dev Server take care of this
+    //     reload: false,
+    //   }
+    // ),
   ],
 };

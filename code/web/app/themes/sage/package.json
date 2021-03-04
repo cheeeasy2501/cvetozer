@@ -50,7 +50,7 @@
     "eslint": "~4.19.1",
     "eslint-loader": "~1.9",
     "eslint-plugin-import": "~2.14.0",
-    "extract-text-webpack-plugin": "~3.0.2",
+    "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^1.1.6",
     "friendly-errors-webpack-plugin": "^1.6.1",
     "imagemin-mozjpeg": "~7.0.0",
@@ -78,8 +78,12 @@
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.2",
     "bootstrap": "v4.3.1",
+    "browser-sync-webpack-plugin": "^2.3.0",
+    "global": "^4.4.0",
     "html-webpack-plugin": "^5.2.0",
     "jquery": "^3.3.1",
+    "npm": "^7.6.0",
+    "owl.carousel": "^2.3.4",
     "popper.js": "^1.14.7"
   }
 }

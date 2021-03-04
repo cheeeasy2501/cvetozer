@@ -50,7 +50,7 @@ class Product
             'hierarchical'       => false,
             'menu_position'      => 10,
             'menu_icon'          => 'dashicons-products',
-            'supports'           => ['title', 'thumbnail', 'excerpt',],
+            'supports'           => ['title'],
             'delete_with_user'   => false,
         ];
     }
