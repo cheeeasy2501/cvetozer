@@ -1,0 +1,12 @@
+{
+    "name": "admin/starter-theme-1.x",
+    "authors": [
+        {
+            "name": "Nikita Koida",
+            "email": "cheeeasy2501@gmail.com"
+        }
+    ],
+    "require": {
+        "timber/timber": "^1.18"
+    }
+}

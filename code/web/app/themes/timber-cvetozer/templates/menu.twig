@@ -1,0 +1,15 @@
+{% if menu %}
+    <ul>
+        {% for item in items %}
+            <li class="{{ item.classes | join(' ') }}">
+                {% if(item.menu_icon) %}
+                    <img class="catalog-category__real-image" src="{{ item.menu_icon.src | resize(24,24) }}">
+                {% else %}
+                    <img class="catalog-category__real-image" style="height: 20px; width: 20px;">
+                {% endif %}
+                <a target="{{ item.target }}" href="{{ item.link }}">{{ item.title }}</a>
+                {# {% include "menu.twig" with {'items': item.children} %} #}
+            </li>
+        {% endfor %}
+    </ul>
+{% endif %}

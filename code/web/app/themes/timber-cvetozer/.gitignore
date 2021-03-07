@@ -1,0 +1,5 @@
+vendor
+node_modules
+wp-content
+composer.lock
+package-lock.json

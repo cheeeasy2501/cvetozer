@@ -1,0 +1,111 @@
+.content-block {
+  overflow: hidden;
+  position: relative;
+
+  .content-category {
+    &__blocks {
+
+      .catalog-category {
+        padding: 16px;
+        max-width: 400px;
+        min-width: 260px;
+        width: 100%;
+        margin-right: 28px;
+        height: 150px;
+
+        &__content {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          height: 100%;
+        }
+
+        &__image {
+          margin-left: 16px;
+        }
+
+        &__real-image {
+          position: absolute;
+          right: -12px;
+          top: -12px;
+        }
+
+        &__info {
+          display: flex;
+        }
+
+        &__title {
+          font-size: 26px;
+          font-weight: 700;
+        }
+
+        &__page {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          border-radius: 4px;
+          background: #0a0a0a;
+          color: #fff;
+          max-width: 165px;
+          padding: 8px 16px;
+          font-size: 15px;
+          font-weight: 400;
+          transition: .2s ease-in;
+        }
+
+        &__page::after {
+          font-family: 'Font Awesome 5 Free';
+          content: '\f35a';
+          font-weight: 600;
+          margin-left: 8px;
+        }
+
+        &__page:hover {
+          transform: scale(1.04);
+        }
+      }
+    }
+  }
+}
+
+.swiper-main-category-container {
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  overflow: hidden;
+  list-style: none;
+  padding: 24px 0;
+  z-index: 1;
+
+  .swiper-pagination {
+    bottom: 0!important;
+  }
+}
+
+.swiper-buttons {
+  position: absolute;
+  width: 100%;
+  top: 110px;
+
+  .swiper-button-prev {
+    left: -15px;
+    outline: none;
+  }
+
+  .swiper-button-next {
+    right: 15px;
+    outline: none;
+  }
+}
+
+.catalog-category__first {
+  background: linear-gradient(125deg, rgba(253, 234, 242, 1) 20%, rgba(245, 238, 253, 1) 100%);
+}
+
+.catalog-category__second {
+  background: linear-gradient(125deg, rgba(249, 254, 235, 1) 20%, rgba(238, 255, 246, 1) 100%);
+}
+
+.catalog-category__third {
+  background: linear-gradient(125deg, rgba(231, 239, 251, 1) 20%, rgba(238, 253, 255, 1) 100%);
+}

@@ -1,0 +1,49 @@
+<div class="swiper-main-category-container">
+    <ul class="content-category__blocks swiper-wrapper">
+        {% for key, term in terms %}
+            <li class='catalog-category swiper-slide
+                {% if(key % 2) %}
+                 catalog-category__second
+                 {% elseif(key % 3) %}
+                 catalog-category__third
+                 {% else %}
+                 catalog-category__first
+                  {% endif %}
+            '>
+                <div class='catalog-category__shadow'></div>
+                <div class='catalog-category__content'>
+                    <div class='catalog-category__info'>
+                        <div class='catalog-category__title'>{{ term.name }}</div>
+                        <div class='catalog-category__image'>
+                          <img class="catalog-category__real-image" src="{{ term.category_image.src | resize(250)}}">
+                        </div>
+                    </div>
+                    <a href="{{ term.link }}" class="catalog-category__page">Перейти в каталог</a>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+    <div class="swiper-pagination"></div>
+</div>
+
+<!-- Slider main container -->
+{# <div class="swiper-container"> #}
+{# <!-- Additional required wrapper --> #}
+{# <div class="swiper-wrapper"> #}
+{# <!-- Slides --> #}
+{# <div class="swiper-slide">Slide 1</div> #}
+{# <div class="swiper-slide">Slide 2</div> #}
+{# <div class="swiper-slide">Slide 3</div> #}
+{# ... #}
+{# </div> #}
+{# <!-- If we need pagination --> #}
+{# <div class="swiper-pagination"></div> #}
+
+{# <!-- If we need navigation buttons --> #}
+{# <div class="swiper-button-prev"></div> #}
+{# <div class="swiper-button-next"></div> #}
+
+{# <!-- If we need scrollbar --> #}
+{# <div class="swiper-scrollbar"></div> #}
+{# </div> #}
+
