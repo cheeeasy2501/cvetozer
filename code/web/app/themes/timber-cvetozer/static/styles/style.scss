@@ -411,10 +411,10 @@ table {
 }
 
 .content-wrapper {
-    min-height: calc(100vh - 200px);
+    min-height: calc(100vh - 240px);
 }
 header, footer {
-    height: 100px;
+    height: 120px;
 }
 
 header, .content-wrapper {
@@ -435,7 +435,7 @@ header, .content-wrapper {
 }
 
 .base-header {
-    padding: 32px 0;
+    //padding: 32px 0;
 }
 
 .content-block {
@@ -477,6 +477,10 @@ header, .content-wrapper {
 
 .hdr-logo-link {
     font-size: 28px;
+}
+.header .inside-wrapper {
+    justify-content: space-between;
+    padding: 24px 0;
 }
 
 //testStyles
