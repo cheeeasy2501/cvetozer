@@ -54,6 +54,7 @@ Timber::$dirname = ['templates', 'views'];
 Timber::$autoescape = false;
 
 
+use Cvetozer\RegisterWidgets;
 /**
  * We're going to configure our theme inside of a subclass of Timber\Site
  * You can move this to its own file and include here via php's include("MySite.php")
@@ -67,9 +68,13 @@ class StarterSite extends Timber\Site
         add_filter('timber/twig', [$this, 'add_to_twig']);
         add_action('init', [$this, 'register_post_types']);
         add_action('init', [$this, 'register_taxonomies']);
+        add_action('widgets_init', [$this, 'registerWidgets']);
         parent::__construct();
     }
 
+    public function registerWidgets(){
+        RegisterWidgets::registerWidgets();
+    }
     /** This is where you can register custom post types. */
     public function register_post_types() {
 
@@ -89,6 +94,8 @@ class StarterSite extends Timber\Site
         $context['notes'] = 'These values are available everytime you call Timber::context();';
         $context['menu'] = new Timber\Menu();
         $context['menu'] = $this->prepareIcon($context['menu']);
+        $context['contact_information_top_widgets'] = Timber::get_widgets('contact_information_top');
+
         return $context;
     }
 
@@ -177,4 +184,16 @@ class StarterSite extends Timber\Site
 
 }
 
+register_sidebar( array(
+    'name' => __('Контактная информация сверху'),
+    'description' => __('Контактная информация для размещения соцсетей или телефонов'),
+    'id' => 'contact_information_top',
+    'before_widget' => '<div>',
+    'after_widget' => '</div>',
+    'before_title' => '<h2 class="rounded">',
+    'after_title' => '</h2>',
+) );
+
 new StarterSite();
+
+

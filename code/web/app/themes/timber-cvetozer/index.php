@@ -17,6 +17,7 @@ use Shop\Taxonomies\Catalog;
 use Timber\Image;
 use Timber\Timber;
 use Timber\PostQuery;
+use Timber\URLHelper;
 
 $templates = ['index.twig'];
 $context                 = Timber::context();
@@ -51,7 +52,7 @@ Timber::render($templates, $context);
  */
 function unsetHomeMenu($menuItems)
 {
-    $helper     = new Timber\URLHelper();
+    $helper     = new URLHelper();
     $currentUrl = $helper::get_current_url();
 
     foreach ($menuItems as $key => $item) {
